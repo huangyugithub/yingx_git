@@ -14,6 +14,7 @@ public class TestGit {
 	@Test
 	public void contextLoads() {
 		System.out.println("testgit" + new Date());
+		System.out.println("第二次修改");
 	}
 
 }
