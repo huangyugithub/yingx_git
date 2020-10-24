@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- namespace: 要实现DAO接口的全限定名 -->
+<mapper namespace="com.baizhi.dao.NewUserDao">
+    <!--select concat(month(create_date),'月'), count(id) from new_user
+        *   where sex = '男'
+        *   group by month(create_date)-->
+
+</mapper>

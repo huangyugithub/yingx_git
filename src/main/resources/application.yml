@@ -1,0 +1,46 @@
+server:
+  port: 8989
+  servlet:
+    context-path: /yingx
+    #jsp热部署
+    jsp:
+      init-parameters:
+        development: true
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp   #mvc:default-servlet-handler
+  #redis
+  redis:
+    port: 6379
+    database: 0   # 操作0号库
+    host: 192.168.91.129
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.91.1:3306/yingxue     #?serverTimezone=UTC
+    username: root
+    password: root
+  servlet:
+    multipart:
+      max-file-size: 10MB     #单个文件大小       默认1MB
+      max-request-size: 90MB  #同时上传多个文件大小 默认10MB
+
+  # activeMQ相关配置
+  activemq:
+    broker-url: tcp://192.168.91.134:61616
+    user: admin
+    password: admin
+    # 如果使用ObjectMessage传输对象，必须要加上这个信任包，否则会报ClassNotFound异常
+    packages:
+      trust-all: true
+  #若果是点对点（queue），那么此处默认应该是false，如果发布订阅，那么一定设置为true
+  jms:
+    pub-sub-domain: true
+
+
+
+mybatis:
+  type-aliases-package: com.baizhi.entity
+  mapper-locations: classpath:com/baizhi/mapper/*Mapper.xml

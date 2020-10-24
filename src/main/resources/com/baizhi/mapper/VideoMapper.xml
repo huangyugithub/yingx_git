@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- namespace: 要实现DAO接口的全限定名 -->
+<mapper namespace="com.baizhi.dao.VideoDao">
+
+    <select id="queryFirst" resultType="com.baizhi.po.VideoPo">
+        select v.id, v.title, v.cover, v.path, v.publish_date publishDate, v.biref, c.name cateName, u.head_img headImg
+        from yx_video v left join yx_category c
+        on v.category_id=c.id left join yx_user u
+        on v.user_id=u.id
+    </select>
+</mapper>
